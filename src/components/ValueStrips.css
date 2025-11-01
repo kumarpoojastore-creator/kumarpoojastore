@@ -1,0 +1,92 @@
+.value-strips {
+  padding: 6rem 0;
+  background: var(--bg-darker);
+  overflow: hidden;
+  position: relative;
+}
+
+.value-strips::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(184, 134, 11, 0.05) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.value-strips-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.value-strip-item {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0 0 20px rgba(184, 134, 11, 0.3);
+}
+
+.value-strip-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  animation: slide-in 2s ease-out forwards;
+  animation-delay: calc(var(--index, 0) * 0.2s);
+}
+
+@keyframes slide-in {
+  to {
+    width: 100%;
+  }
+}
+
+.value-strip-item:nth-child(even) {
+  text-align: right;
+  padding-right: 10%;
+}
+
+.value-strip-item:nth-child(odd) {
+  text-align: left;
+  padding-left: 10%;
+}
+
+@media (max-width: 768px) {
+  .value-strips {
+    padding: 4rem 0;
+  }
+
+  .value-strips-container {
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .value-strip-item {
+    padding: 1.5rem 0;
+    white-space: normal;
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+

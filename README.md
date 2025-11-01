@@ -1,46 +1,106 @@
-# Getting Started with Create React App
+# Kumar Pooja Store — Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A premium dark-themed website for Kumar Pooja Store with smooth parallax scrolling and modern animations.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- 🎨 Dark premium theme with soft glow accents
+- ✨ GSAP animations with smooth parallax effects
+- 📱 Fully responsive design
+- 🛒 WhatsApp-only ordering (no cart/checkout)
+- 🖼️ Product showcase grid
+- 📍 Contact information display
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React with TypeScript
+- GSAP for animations
+- Locomotive Scroll for smooth scrolling
+- CSS3 with custom properties
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Development
 
-### `npm test`
+### Install Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+### Start Development Server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app will open at [http://localhost:3000](http://localhost:3000)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Build for Production
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Deployment to Vercel
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Option 1: Using Vercel CLI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install -g vercel
+vercel
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Option 2: Using GitHub Integration
 
-## Learn More
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import your repository
+4. Vercel will automatically detect the Create React App configuration
+5. Deploy!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The `vercel.json` file is already configured for optimal deployment.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Hero.tsx          # Hero section with parallax
+│   ├── ValueStrips.tsx   # Scroll micro copy values
+│   ├── Products.tsx      # Product grid
+│   └── Contact.tsx       # Contact information
+├── App.tsx               # Main app component
+├── App.css               # Global app styles
+└── index.css             # Base styles and theme
+```
+
+## Product Images
+
+Product images should be placed in `public/images/` directory with the naming convention:
+- `01-agarbatti.jpg`
+- `02-aragaja.jpg`
+- etc.
+
+The component automatically maps product names to image filenames.
+
+## Customization
+
+### Theme Colors
+
+Edit CSS variables in `src/index.css`:
+
+```css
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-darker: #050505;
+  --accent-gold: #b8860b;
+  --accent-brass: #cd853f;
+}
+```
+
+### Contact Information
+
+Update contact details in `src/components/Contact.tsx`
+
+## License
+
+Free to use for Kumar Pooja Store
